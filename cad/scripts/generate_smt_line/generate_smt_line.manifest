@@ -1,0 +1,8 @@
+<manifest>
+    <autodesk>
+        <myAuthor>Antigravity Capstone Agent</myAuthor>
+        <myDescription>Auto-generate 3D parametric bounding box layout for SMT Production Line</myDescription>
+        <myVersion>1.0</myVersion>
+        <supportedOS>windows|mac</supportedOS>
+    </autodesk>
+</manifest>
