@@ -1,7 +1,7 @@
-# Automated Box Folding System - Capstone Project
+# SMT Automation & Digital Twin - Capstone Project
 
 ## Overview
-This project focuses on the design, simulation, and implementation of an automated box folding system (tailored for PCB packaging) using **Autodesk Fusion** for mechanical CAD/assembly and **Mitsubishi GX Works3** for PLC ladder logic programming.
+This repository contains engineering documentation, control logic, CAD models, and simulation files for an automated **SMT (Surface Mount Technology) assembly line**, integrated with an **Autonomous Mobile Robot (AMR)** and **Collaborative Robot (Cobot)** material handling cell, paired with a complete **Digital / Visual Twin Simulation**.
 
 ---
 
@@ -9,30 +9,58 @@ This project focuses on the design, simulation, and implementation of an automat
 
 ```
 capstone project/
-├── cad/                     # Mechanical design & CAD files (Fusion 360)
-│   ├── exports/             # Exported STEP, IGES, STL, DXF, or drawings
-│   └── archive/             # Old revisions and design iterations
-├── plc/                     # Control system & automation logic
+├── digital_twin/            # Digital / visual twin simulation assets
+│   ├── models/              # Simplified bounding-box shells & OEM robot CAD
+│   └── simulation/          # RobotStudio / Visual Components / Isaac Sim files
+│
+├── smt_line/                # Physical SMT machine configs & protocols
+│   ├── machine_profiles/    # Dimension sheets, feeder setups, thermal profiles
+│   └── smema_wiring/        # Inter-machine SMEMA handshake & wiring schematics
+│
+├── robotics/                # AMR & Cobot integration
+│   ├── abb_gofa/            # ABB GoFa CRB 15000 RAPID code & OmniCore configs
+│   └── next_amr/            # NEXT CMR1000 AMR SLAM maps, waypoints, RCS scripts
+│
+├── plc/                     # Mitsubishi GX Works3 ladder logic & I/O mapping
 │   ├── gxworks3_project/    # GX Works3 workspace / project files (.gx3 / .gxw)
-│   ├── io_mapping/          # I/O assignment sheets, memory registers, sensors/actuators
+│   ├── io_mapping/          # I/O assignment sheets, memory registers, sensors
 │   └── backups/             # Dated logic backups and snapshots
-├── specs/                   # Box dimensions, tolerances, PCB constraints, actuator specs
-├── docs/                    # Documentation, presentations, and reports
-│   ├── slides/              # Slide presentations and design reviews
-│   └── notes/               # Meeting notes, troubleshooting, and logs
-└── assets/                  # Photos, diagrams, and video demos
+│
+├── cad/                     # Autodesk Fusion 360 models & mechanical drawings
+│   ├── exports/             # Exported STEP, IGES, STL, DXF files
+│   └── archive/             # Old revisions & initial mechanism concepts
+│
+├── docs/                    # Master documentation & action items
+│   ├── immediate_tasks/     # High-priority task lists & lab checklists
+│   ├── equipment_inventory.md # Full machine breakdown & serial/model specifications
+│   ├── manuals_reference.md   # Manual document IDs, vendor portals, retrieval guides
+│   ├── production_line_architecture.md # Layout flowchart & network architecture
+│   └── todo_list.md         # 4-Phase master implementation roadmap
+│
+├── specs/                   # Mechanical/electrical specifications & calculation tools
+└── assets/                  # Machine photographs, lab layout imagery, references
 ```
 
 ---
 
-## Technology Stack
-- **CAD**: Autodesk Fusion (Fusion 360)
-- **PLC Programming**: Mitsubishi GX Works3 (Ladder Logic / Function Block Diagram)
-- **Hardware Targets**: Mitsubishi iQ-F / iQ-R series PLC (or FX series), pneumatic actuators / servo drives, sensors (proximity, photoelectric).
+## Machine Inventory
+
+| Step | Machine | Model | Manufacturer |
+| :--- | :--- | :--- | :--- |
+| **01** | Automatic PCB Loader | `ZB2535SBJ` | Zhejiang Huaqi Zhengbang |
+| **02** | Solder Paste Printer | `ZB-4535LYS` | Zhejiang Huaqi Zhengbang |
+| **03** | SMT Chip Mounter (8-Head) | `WS-8Y` | Zhejiang Huaqi Zhengbang |
+| **04** | Hot-Air Reflow Oven | `ZBRF-835` | Zhejiang Huaqi Zhengbang |
+| **05** | Online 2D AOI Inspection | `ZB-800A` | Zhejiang Huaqi Zhengbang |
+| **06** | Dispensing / Assembly Robot | DRS Series SCARA | Delta Electronics |
+| **07** | Automatic PCB Unloader | `ZB2535XBJ` | Zhejiang Huaqi Zhengbang |
+| **08** | Collaborative Robot | GoFa™ CRB 15000 | ABB Robotics |
+| **09** | Heavy-Duty AMR | CMR1000 / SMR1000 | NEXT Robotics |
 
 ---
 
-## Key References & Files
-- [Initial Slide / Problem Statement](file:///c:/capstone%20project/Why%20we%20couldn't%20fold%20box%20that%20fits%20the%20pcb.pdf)
-- [I/O Mapping Template](file:///c:/capstone%20project/plc/io_mapping/io_mapping.md)
-- [Box & PCB Specifications](file:///c:/capstone%20project/specs/box_pcb_specs.md)
+## Quick Links
+- [Immediate Lab Action Plan](file:///c:/capstone%20project/docs/immediate_tasks/immediate_tasks.md)
+- [Equipment Inventory & Specs](file:///c:/capstone%20project/docs/equipment_inventory.md)
+- [Machine Manuals Reference](file:///c:/capstone%20project/docs/manuals_reference.md)
+- [System Architecture](file:///c:/capstone%20project/docs/production_line_architecture.md)
